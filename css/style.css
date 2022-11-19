@@ -1,0 +1,18 @@
+#map {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+}
+
+#plot {
+    position: absolute;
+    left: 72%;
+    width: 28%;
+    height: 100%;
+}
+
+#barChartRace {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+}
