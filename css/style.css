@@ -1,13 +1,13 @@
 #map {
     position: absolute;
-    width: 50%;
-    height: 100%;
+    width: 60%;
+    height: 70%;
 }
 
 #plot {
     position: absolute;
-    left: 60%;
-    width: 50%;
+    left: 65%;
+    width: 40%;
     height: 100%;
 }
 

@@ -5,37 +5,23 @@ function createMap() {
         maxZoom: 19,
     }).addTo(map);
 
-    function style(feature) {
-        var colorScale = d3.scaleQuantize()
-            .range(colorbrewer,YlOrRd[9])
-            .domain([0, 50000]);
-
-        return {
-            // fillColor: colorScale(feature.properties.VIOLATIONS),
-            weight: 2,
-            opacity: 1,
-            color: 'white',
-            // dashArray: '3',
-            fillOpacity: 0.7
-        };
-    }
-
     function highlightFeature(e) {
         var layer = e.target;
-        // console.log(layer);
 
+        // Set color for boundary of marker
         layer.setStyle({
             weight: 5,
-            color: '#666',
-            dashArray: '',
+            color: '#000000',
             fillOpacity: 0.7
         });
 
         var selectedIntersection = layer.feature.properties.INTERSECTION.substring(0, 20);
         // console.log('Selected Intersection: ' + selectedIntersection);
-        d3.selectAll("#"+selectedIntersection).style('fill', 'rgb(120,50,50)')
+        // d3.selectAll("#"+selectedIntersection).style('fill', 'rgb(120,50,50)')
 
-        layer.bringToFront();
+        layer.bindPopup(selectedIntersection);
+        layer.openPopup();
+        // layer.bringToFront();
     }
 
     function resetHighlight(e) {
@@ -57,27 +43,27 @@ function createMap() {
             .append('g')
             .attr('class', 'bar');
         
-        var x = d3.scaleLog().domain([1,50000]).range([0,500]);
+        var x = d3.scaleLog().domain([1,50000]).range([0,400]);
         // console.log(x(10));
-        var xScale = d3.scaleLinear().range([0, 500]).domain([1, 50000]);
+        var xScale = d3.scaleLinear().range([0, 400]).domain([1, 50000]);
 
         g.append('rect')
             .style('stroke-width', '1')
             .style('stroke', 'rgb(0,0,0)')
             .style('fill', 'rgb(200,200,200)')
             .attr('x', 0)
-            .attr('y', 40)
+            .attr('y', 250)
             .attr('width', x(e.target.feature.properties.VIOLATIONS))
             .attr('height', height)
             .attr('id', e.target.feature.properties.INTERSECTION);
 
         g.append('g')
             .call(d3.axisBottom(xScale))
-            .attr('transform', `translate(0, ${height + 50})`);
+            .attr('transform', `translate(0, 275)`);
 
         g.append('text')
             .attr('x', 0)
-            .attr('y', (d,i) => {return 25+(height+5)*i})
+            .attr('y', 225)
             .text(e.target.feature.properties.INTERSECTION)
     }
 
@@ -88,7 +74,7 @@ function createMap() {
             click: clickFeature
         });
 
-        layer.bindPopup(feature.properties.INTERSECTION);
+        // layer.bindPopup(feature.properties.INTERSECTION);
         
     }
 
@@ -143,23 +129,8 @@ function createBarChart() {
 
 }
 
-function barChartFunc() {
-    var barChart = d3.selectAll('#plot').append('svg').style('width', '100%').style('height', '100%');
-    var width = 25;
-    var height = 15;
-
-    var g = barChart.selectAll('.bar')
-        .data(violations['features'])
-        .enter()
-        .append('g')
-        .attr('class', 'bar')
-    
-        var x = d3.scaleLog().domain([1,50000]).range([0,200]);
-}
-
 function init() {
     createMap();
-    // createBarChart();
 }
 
 window.onload = init;
