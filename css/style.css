@@ -11,6 +11,10 @@
     height: 100%;
 }
 
+#plot_heading {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #barChartRace {
     position: absolute;
     top: 50%;
