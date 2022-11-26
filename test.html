@@ -11,7 +11,7 @@
         <script src="intersectionViolations.js"></script>
         <!-- <script src="js/main.js"></script> -->
 
-        <script src="js/test.js"></script>
+        <script src="js/barChart.js"></script>
         <script src="data/violationsPerDay.js"></script>
         <script src="data/violationsPerMonth.js"></script>
         <script src="data/violationsPerYear.js"></script>
@@ -21,8 +21,9 @@
         <div>
             <label for="dropdownMenu">Select Aggregation: </label>
 
-            <select name="dropdownMenu" id="dropdown">
-                <option value="Year" selected="selected">Year</option>
+            <select name="dropdownMenu" id="dropdown" style="width: 20px !important;">
+                <option value="" selected="selected">-- Option --</option>
+                <option value="Year">Year</option>
                 <option value="Month">Month</option>
                 <option value="Day">Day</option>
             </select>

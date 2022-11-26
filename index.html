@@ -19,8 +19,15 @@
         <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
         <script src="https://d3js.org/d3.v7.min.js"></script>
         <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
-        <script src="intersectionViolations.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/barChart.js"></script>
+
+        <!-- Data -->
+        <script src="intersectionViolations.js"></script>
+        <script src="data/violationsPerDay.js"></script>
+        <script src="data/violationsPerMonth.js"></script>
+        <script src="data/violationsPerYear.js"></script>
+
 	</head>
 	<body class="is-preload">
 
@@ -31,7 +38,7 @@
 						<ul>
 							<li><a href="#intro">Introduction</a></li>
 							<li><a href="#one">Violation Map</a></li>
-							<li><a href="#two">Vis 3</a></li>
+							<li><a href="#two">Bar Chart</a></li>
 							<li><a href="#three">Get in touch</a></li>
 						</ul>
 					</nav>
@@ -54,58 +61,29 @@
 						</div>
 					</section>
 
-				<!-- One -->
+				<!-- Violation Map -->
 					<section id="one" class="wrapper style1 fullscreen fade-up">
-						<!-- <section> -->
-                            <div id="map"></div>
-        
-                            <div id="plot">
-                                <h2 id="plot_heading">Red Light Camera Violations</h1>
-                            </div>
-						<!-- </section> -->
+                        <div id="map"></div>
+    
+                        <div id="plot">
+                            <h2 id="plot_heading">Red Light Camera Violations</h1>
+                        </div>
 					</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
+				<!-- Bar Chart -->
+					<section id="two" class="wrapper style1 fullscreen fade-up">
+						<div id="dropdownDiv">
+                            <label for="dropdownMenu" id="label">Select Aggregation: </label>
+
+                            <select name="dropdownMenu" id="dropdown">
+                                <option value="" selected="selected">-- Option --</option>
+                                <option value="Year">Year</option>
+                                <option value="Month">Month</option>
+                                <option value="Day">Day</option>
+                            </select>
+
+                            <div id="barplot"></div>
+                        </div>
 					</section>
 
 				<!-- Three -->

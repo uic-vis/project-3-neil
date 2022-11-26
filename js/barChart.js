@@ -1,7 +1,4 @@
 function createBarChart(selectedOption) {
-    // var selectedOption = document.getElementById('dropdown').value;
-    // console.log(selectedOption);
-    
     switch(selectedOption) {
         case 'Year':
           let chartYear = BarChart(violationsperyear, {
@@ -49,29 +46,6 @@ function createBarChart(selectedOption) {
           return chartDay
           
       }
-
-    
-
-    // let chartDay = BarChart(violationsperday, {
-    //     x: d => d.DAY,
-    //     y: d => d.VIOLATIONS,
-    //     xDomain: d3.groupSort(violationsperday, ([d]) => -d.VIOLATIONS, d => d.DAY),
-    //     color: 'steelblue',
-    //     xLabel: 'Day',
-    //     yLabel: 'Violations',
-    //     width: 800,
-    //     height: 600,
-    //     marginLeft: 80,
-    //     xPadding: 0.3
-    //   })
-    //   return chartDay
-}
-
-function init() {
-    document.getElementById('dropdown').oninput = function() {
-        // console.log(this.value);
-        createBarChart(this.value);
-    }
 }
 
 // Copyright 2021 Observable, Inc.
@@ -171,5 +145,3 @@ function BarChart(data, {
   
     return svg.node();
   }
-
-window.onload = init;

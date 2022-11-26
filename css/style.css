@@ -27,6 +27,23 @@
     width: 50%;
 }
 
+#dropdownDiv {
+    padding-left: 5%;
+}
+
+#dropdown {
+    width: 150px !important;
+    font: Arial, Helvetica, sans-serif;
+}
+
+#label {
+    font: Arial, Helvetica, sans-serif;
+}
+
+#barplot {
+    padding-top: 5%;
+}
+
 .scaleColor {
     color: #23395d;
 }
