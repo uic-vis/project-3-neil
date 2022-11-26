@@ -44,6 +44,10 @@
     padding-top: 5%;
 }
 
+#attrList {
+    font-size: 20px;
+}
+
 .scaleColor {
     color: #23395d;
 }

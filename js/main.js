@@ -1,5 +1,5 @@
 function createMap() {
-    var map = L.map('map').setView([41.881832, -87.623177], 11);
+    var map = L.map('map', { drawControl: true }).setView([41.881832, -87.623177], 11);
 
     var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -34,7 +34,6 @@ function createMap() {
 
         var width = document.getElementById('plot').clientWidth;
         var height = document.getElementById('plot').clientHeight;
-        console.log(height);
 
         var g = bar.selectAll('.bar')
             .data([e.target.feature.properties.VIOLATIONS])
@@ -103,6 +102,8 @@ function init() {
     document.getElementById('dropdown').oninput = function() {
         createBarChart(this.value);
     }
+
+    brushablePlot();
 }
 
 window.onload = init;
