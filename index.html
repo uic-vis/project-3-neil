@@ -29,6 +29,7 @@
         <script src="js/main.js"></script>
         <script src="js/barChart.js"></script>
         <script src="js/brushPlot.js"></script>
+        <script src="js/brushBarChart.js"></script>
 
 	</head>
 	<body class="is-preload">
@@ -95,6 +96,7 @@
                             </select>
 
                             <div id="barplot"></div>
+                            <!-- <div id="dayplot"></div> -->
                         </div>
 					</section>
 
@@ -103,6 +105,20 @@
 						<div id="brushPlot">
 
                         </div>
+                        <div id="dayplot"></div>
+
+                        <!-- <script>
+                            const scatter = brushablePlot()
+                            const bar = barChart()
+
+                            d3.select(scatter).on('input', () => {
+                                bar.update(scatter.value)
+                            })
+
+                            // bar.update(scatter.value)
+
+                            var output = html`<div">${scatter}${bar}</div>`;
+                        </script> -->
 					</section>
 
 			</div>

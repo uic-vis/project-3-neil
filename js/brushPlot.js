@@ -1,33 +1,19 @@
-// function loadData() {
-//     d3.csv('data/data.csv').then((data) => {
-//         let initialValue = data.map(d => ({
-//             INDEX: d['INDEX'],
-//             INTERSECTION: d['INTERSECTION'],
-//             CAMERA: d['CAMERA'],
-//             ID: d['ID'],
-//             ADDRESS: d['ADDRESS'],
-//             VIOLATIONS: d['VIOLATIONS'],
-//             LATITUDE: d['LATITUDE'],
-//             LONGITUDE: d['LONGITUDE'],
-//             DAY: d['DAY']
-//         }));
-
-//         return initialValue;
-//     })
-// }
-
-// var data = loadData();
 var width = 500;
 var height = 500;
 
+var dataFeatures = data.features;
+
+var intersections = Array.from(new Set(dataFeatures.map(d => d.properties.INTERSECTION)));
+var days = Array.from(new Set(dataFeatures.map(d => d.properties.DAY)));
+var colors = d3.scaleOrdinal().domain(intersections).range(d3.schemeCategory10);
+var dayColors = d3.scaleOrdinal().domain(days).range(d3.schemeCategory10);
+
 function brushablePlot() {
     
-    const initialValue = data;
+    const initialValue = dataFeatures;
   
     const margin = ({ top: 10, right: 20, bottom: 50, left: 105 })
-    const height = 500
-    const width = 500
-  
+
     const svg = d3.selectAll('#brushPlot').append('svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
@@ -42,16 +28,16 @@ function brushablePlot() {
     const radius = 3
   
     const dots = g.selectAll('circle')
-        .data(data)
+        .data(dataFeatures)
         .join('circle')
-        .attr('cx', d => xPlot(d.LONGITUDE))
-        .attr('cy', d => yPlot(d.LATITUDE))
-        .attr('fill', d => dayColors(d.DAY))
+        .attr('cx', d => xPlot(d.geometry.coordinates[0]))
+        .attr('cy', d => yPlot(d.geometry.coordinates[1]))
+        .attr('fill', d => dayColors(d.properties.DAY))
         .attr('opacity', 1)
         .attr('r', radius)
   
     const brush = d3.brush()
-        .extent([
+        .extent([ 
           [0, 0],
           [width, height]
         ])
@@ -64,20 +50,20 @@ function brushablePlot() {
       const [[x1, y1], [x2, y2]] = event.selection;
   
       function isBrushed(d) {
-        const cx = xPlot(d.LONGITUDE);
-        const cy = yPlot(d.LATITUDE);
+        const cx = xPlot(d.geometry.coordinates[0]);
+        const cy = yPlot(d.geometry.coordinates[1]);
   
         return cx >= x1 && cx <= x2 && cy >= y1 && cy <= y2;
       }
   
-      dots.attr("fill", (d) => (isBrushed(d) ? colors(d.INTERSECTION) : "gray"));
+      dots.attr("fill", (d) => (isBrushed(d) ? colors(d.properties.INTERSECTION) : "gray"));
   
-      svg.property("value", data.filter(isBrushed)).dispatch("input");
+      svg.property("value", dataFeatures.filter(isBrushed)).dispatch("input");
     }
   
     function onEnd(event) {
       if (event.selection === null) {
-        dots.attr("fill", (d) => colors(d.INTERSECTION));
+        dots.attr("fill", (d) => colors(d.properties.INTERSECTION));
         svg.property("value", initialValue).dispatch("input");
       }
     }
@@ -86,12 +72,12 @@ function brushablePlot() {
 }
 
 var xPlot = d3.scaleLinear()
-    .domain(["-87.575292523", "-87.812781431"])
+    .domain(d3.extent(dataFeatures, d => d.geometry.coordinates[0]))
     .nice()
     .range([0, 500])
 
 var yPlot = d3.scaleLinear()
-    .domain(["41.677720829", "42.012371335"])
+    .domain(d3.extent(dataFeatures, d => d.geometry.coordinates[1]))
     .nice()
     .range([500, 0])
 

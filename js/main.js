@@ -103,7 +103,19 @@ function init() {
         createBarChart(this.value);
     }
 
-    brushablePlot();
+    const scatter = brushablePlot()
+    const bar = barChart()
+
+    d3.select(scatter).on('input', () => {
+        bar.update(scatter.value)
+    })
+
+    bar.update(scatter.value)
+
+    // document.getElementById('brushplot').appendChild(scatter);
+    // document.getElementById('dayplot').appendChild(bar);
+
+    return html`<div">${scatter}${bar}</div>`;
 }
 
 window.onload = init;
