@@ -32,7 +32,7 @@
 }
 
 #dropdown {
-    width: 150px !important;
+    width: 200px !important;
     font: Arial, Helvetica, sans-serif;
 }
 
@@ -48,6 +48,6 @@
     font-size: 20px;
 }
 
-.scaleColor {
+.scaleColorCustom {
     color: #23395d;
 }

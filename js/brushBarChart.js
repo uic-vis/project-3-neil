@@ -37,8 +37,9 @@ function barChart() {
     let barsGroup = g.append('g')
   
     function update(data) {
+    //   console.log(data);
       const originCounts = d3.rollup(
-        dataFeatures,
+        data,
         group => d3.sum(group, x => x.properties.VIOLATIONS),
         d => d.properties.DAY
       )

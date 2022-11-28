@@ -60,7 +60,7 @@ function createMap() {
 
         // Chart Scale
         g.append('g')
-            .attr('class', 'scaleColor')
+            .attr('class', 'scaleColorCustom')
             .call(d3.axisBottom(xScale))
             .attr('transform', `translate(0, ${(height / 4) + 25})`);
 
