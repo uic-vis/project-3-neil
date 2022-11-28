@@ -8,7 +8,7 @@ https://neilchawla.github.io/cs422_portfolio/
 
 https://observablehq.com/@neilchawla/cs-424-project-2
 
-### `:pushpin:` About the Dataset
+### :pushpin: About the Dataset
 
 This dataset reflects the daily volume of violations created by the City of Chicago Red Light Program for each camera. The data reflects violations that occurred from July 2014 until December 2020, and contains about 800,000 observations for red light violations. The main attributes of interest from the dataset are:
 
