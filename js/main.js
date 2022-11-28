@@ -115,7 +115,7 @@ function init() {
     // document.getElementById('brushplot').appendChild(scatter);
     // document.getElementById('dayplot').appendChild(bar);
 
-    return html`<div">${scatter}${bar}</div>`;
+    // return html`<div">${scatter}${bar}</div>`;
 }
 
 window.onload = init;
