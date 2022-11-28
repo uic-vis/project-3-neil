@@ -47,9 +47,9 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Introduction</a></li>
-							<li><a href="#one">Violation Map</a></li>
-							<li><a href="#two">Bar Chart</a></li>
-							<li><a href="#three">Brushable Plot</a></li>
+							<li><a href="#one">Violations by Day</a></li>
+							<li><a href="#two">Violation Map</a></li>
+							<li><a href="#three">Violation Aggregations</a></li>
                             <li><a href="#four">References</a></li>
 						</ul>
 					</nav>
@@ -89,8 +89,14 @@
 						</div>
 					</section>
 
-				<!-- Violation Map -->
+                <!-- Brushable Plot -->
 					<section id="one" class="wrapper style1 fullscreen fade-up">
+                        <div id="brushPlot"></div>
+                        <div id="dayplot"></div>
+					</section>
+
+				<!-- Violation Map -->
+					<section id="two" class="wrapper style1 fullscreen fade-up">
                         <div id="map"></div>
     
                         <div id="plot">
@@ -99,7 +105,7 @@
 					</section>
 
 				<!-- Bar Chart -->
-					<section id="two" class="wrapper style1 fullscreen fade-up">
+					<section id="three" class="wrapper style1 fullscreen fade-up">
 						<div id="dropdownDiv">
                             <label for="dropdownMenu" id="label">Select Aggregation: </label>
 
@@ -115,16 +121,19 @@
                         </div>
 					</section>
 
-				<!-- Brushable Plot -->
-					<section id="three" class="wrapper style1 fullscreen fade-up">
-                        <div id="brushPlot"></div>
-                        <div id="dayplot"></div>
-					</section>
-
                 <!-- References -->
                     <section id="four" class="wrapper style1 fullscreen fade-up">
                         <div class="inner">
-                            <h2>Source Code</h2>
+                            <h1>CS 424: Visualization & Visual Analytics</h1>
+                            <h3>
+                                Fall '22 <br> 
+                                Prof. Fabio Miranda <br>
+                                University of Illinois at Chicago
+                            </h3>
+
+                            <br> <br>
+
+                            <h4>Source Code</h4>
                             <ul class="icons">
                                 <li><a href="https://github.com/uic-vis/project-3-neil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                                 <li><a href="https://observablehq.com/@neilchawla/cs-424-project-2"><i class="fa-solid fa-code"></i></a></li>
