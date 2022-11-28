@@ -1,10 +1,10 @@
 # CS 424: Project 3
 
-### Website
+### :earth_americas: Website
 
 https://neilchawla.github.io/cs422_portfolio/
 
-### Observable Notebook
+### :page_facing_up: Observable Notebook
 
 https://observablehq.com/@neilchawla/cs-424-project-2
 
@@ -19,13 +19,13 @@ This dataset reflects the daily volume of violations created by the City of Chic
 
 This dataset contains categorial, numeric and DateTime attributes. The original dataset can be found on the City of Chicago website at - https://data.cityofchicago.org/Transportation/Red-Light-Camera-Violations/spqx-js37
 
-### Preprocessing
+### :scissors: Preprocessing
 
 The raw dataset was first filtered to remove any missing/NaN values. The dataset was then manipulated and transformed using Pandas in order to create aggregations such as the number of violations grouped by Year, Day, and Month, as well as GeoJSON files used to create the visualizations.
 
 ---
 
-### Visualizations
+### :bar_chart: Visualizations
 
 ![img1](./images/violationMap.png)
 
@@ -55,7 +55,7 @@ From the visualization above, it can be observed that intersections in the south
 
 ---
 
-### References
+### :spiral_notepad: References
 
 - https://observablehq.com/@d3/bar-chart?collection=@d3/charts
 - https://observablehq.com/@d3/bar-chart-race
