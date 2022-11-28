@@ -15,6 +15,25 @@
     opacity: 60%;
 }
 
+/* .container3 {
+    display: flex;
+    width: 100%;
+} */
+
+#brushPlot {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    padding-left: 8%;
+}
+
+#dayplot {
+    position: absolute;
+    left: 50%;
+    width: 40%;
+    height: 50%;
+}
+
 #plot_heading {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
