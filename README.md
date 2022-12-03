@@ -25,6 +25,12 @@ The raw dataset was first filtered to remove any missing/NaN values. The dataset
 
 ---
 
+### :desktop_computer: Project Website Interface
+
+![img](./images/projectHomePage.png)
+
+---
+
 ### :bar_chart: Visualizations
 
 #### Red Light Violation Map
