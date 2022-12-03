@@ -35,6 +35,8 @@ The raw dataset was first filtered to remove any missing/NaN values. The dataset
 
 This visualization helps us observe the intersections recording the most number of violations over time. This can be particularly helpful in implementing additional measures to reduce the number of red light violations once areas reporting high numbers are identified. This also helps us understand the impact of development over the years on the number of violations reported at an intersection, and can be combined with other datasets to gather insights.
 
+The user can hover over markers on the map to view the intersection name, and upon clicking a marker, the plot on the right gets updated visualizing the number of violations recorded at that intersection.
+
 ---
 
 #### Red Light Violation Aggregations
@@ -49,6 +51,8 @@ As for the violations observed over each month, the summer months from May to Se
 
 When looking at the violations taking place over each day, the trend is fairly during weekdays. There are more violations observed on the weekend, which is likely due to people spending more time outside on their off days.
 
+The user can select an aggregation option from the dropdown menu, after which the bar plots get updated with the appropriate visualization. The user can get additional information by hovering over a bar, which displays the value for that bar.
+
 ---
 
 #### Red Light Violation Distribution by Day
@@ -58,6 +62,8 @@ When looking at the violations taking place over each day, the trend is fairly d
 ### Question 3: How does the distribution of red light violations for each day differ over different regions of Chicago?
 
 From the visualization above, it can be observed that intersections in the south have reported a lower number of red light violations as compared to the north. The number of violations observed increases as we move towards the eastern side, and this trend remains consistent. Furthermore, weekends remain the days with the most number of violations recorded, except for some regions in the middle eastern part where weekdays report higher numbers.
+
+The user can click and drag to select an area of choice, after which the bar plot on the right gets updated with the values of data points present inside the selected box.
 
 ---
 
